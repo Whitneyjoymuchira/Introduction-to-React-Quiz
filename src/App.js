@@ -1,5 +1,5 @@
 import React from "react";
-import logo from './logo.svg';
+import logo from './logo1.webp';
 import './App.css';
 
 /**
@@ -63,18 +63,26 @@ function Parent() {
 function App() {
   const [] = React.useState(true);
   return (
-    
+
     <>
-    
-    <img src={logo} className="App-logo" alt="logo" />
+      <p><h1>'JSX IS COOL !!'</h1></p>
+       <img src={logo} className="App-logo" alt="logo" />
+
       <h3>User names</h3>
-      <ul></ul>
+      <ul>
+        {users.map(users => {
+          return (
+            <li key={users.index}>{users.name}</li>
+          )
+        })}
+
+      </ul>
       <button>Hide Element Below</button>
 
       <div>Toggle Challenge</div>
       <Parent>
-      <Child />
-    </Parent>
+        <Child />
+      </Parent>
     </>
   );
 }
